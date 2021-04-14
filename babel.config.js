@@ -1,7 +1,32 @@
-module.exports = {
-  presets: [
-    "@babel/preset-env",
-    "@babel/preset-react",
-    "@babel/preset-typescript",
-  ],
+module.exports = (api, options) => {
+  const { NODE_ENV } = options || process.env;
+  const dev = NODE_ENV === "development";
+  const modules = NODE_ENV === "esm" ? false : "commonjs";
+
+  if (api) {
+    api.cache(() => NODE_ENV);
+  }
+
+  const plugins = [
+    ["@babel/plugin-proposal-class-properties", { loose: true }],
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-nullish-coalescing-operator",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-export-default-from",
+    ["@babel/plugin-transform-runtime", { useESModule: !modules }],
+  ];
+
+  return {
+    presets: [
+      ["@babel/preset-env", { modules, loose: true }],
+      ["@babel/preset-react", { development: dev }],
+      "@babel/preset-typescript",
+    ],
+    plugins,
+    env: {
+      coverage: {
+        plugins: [["istanbul"]],
+      },
+    },
+  };
 };
