@@ -1,5 +1,5 @@
 {
-  "name": "@teemsly/authorization",
+  "name": "teemsly-authorization",
   "version": "1.0.0",
   "description": "A react library for protect some component or protect the router",
   "main": "src/index.tsx",
