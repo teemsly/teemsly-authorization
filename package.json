@@ -2,7 +2,14 @@
   "name": "teemsly-authorization",
   "version": "1.0.0",
   "description": "A react library for protect some component or protect the router",
-  "main": "src/index.tsx",
+  "main": "lib/index.js",
+  "typings": "es/index.js",
+  "module": "es/index.js",
+  "source": "src/index.tsx",
+  "directories": {
+    "lib": "lib/",
+    "es": "es/"
+  },
   "scripts": {
     "test": "jest"
   },
@@ -24,6 +31,12 @@
     "url": "https://github.com/teemsly/teemsly-authorization/issues"
   },
   "homepage": "https://github.com/teemsly/teemsly-authorization#readme",
+  "files": [
+    "dist",
+    "lib",
+    "types",
+    "es"
+  ],
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
@@ -36,6 +49,7 @@
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
     "babel-jest": "^26.6.3",
+    "gulp": "^4.0.2",
     "jest": "^26.6.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
