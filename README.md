@@ -1,3 +1,18 @@
+# Installation
+
+To use teemsly authorization you can install by `npm` or `yarn`
+Intallation using `npm`
+
+```
+npm i teemsly-auth
+```
+
+Intallation using `yarn`
+
+```
+yarn add teemsly-auth
+```
+
 # Teemsly Authorization and Protected Router
 
 Authorization to protect component or element base on permission or role,and protected router base on authorities.
@@ -7,7 +22,7 @@ Authorization to protect component or element base on permission or role,and pro
 There two arguments to use this function, first is `authorities` and the second one is `hasAnyAuthotities`. The first agrument is define from the user role or permission, and second argument define for the permission that allowed.
 
 ```
-import hasAnyAuthority from "teemsly-authorization"
+import hasAnyAuthority from "teemsly-auth"
 
 const isAuthorization = hasAnyAuthority(["ADMIN"], ["ADMIN", "USER"]);
 
@@ -21,7 +36,7 @@ console.log(isAuthorization) // return to true
 In this protected router use `react-router-dom` as router. for example let's see the example below.
 
 ```
-import { PrivateRouteReact, PrivateRouteReactContext } from "teemsly-authorization"
+import { PrivateRouteReact, PrivateRouteReactContext } from "teemsly-auth"
 
 const Home = () => {
   return (
